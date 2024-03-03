@@ -178,9 +178,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function endQuiz() {
+        console.log("End quiz function called."); 
+        // Log that the endQuiz function is called
+    
+    // Make sure the quiz container is hidden and result container is shown
         quizContainer.classList.add('hide');
         resultContainer.classList.remove('hide');
+       // Display the final score
         scoreElement.innerText = "Your score is: " + score;
+        console.log("Final score displayed: " + score); // Log the final score
     }
 
     submitScoreButton.addEventListener('click', saveScore);
