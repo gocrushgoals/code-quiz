@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    text-align: center;
+    text-align: left;
     margin-top: 50px;
     margin-left: 20px;
 }
@@ -15,7 +15,9 @@ body {
     text-align: left;
     margin-top: 50px;
     margin-left: 50px;
-    background-color: #007aaf;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    background-color: #ceacfc;
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -93,4 +95,21 @@ button:hover {
 
 #submit-score:hover {
     background-color: #007aaf;
+}
+/* Default styles */
+
+/* Styles for devices with a maximum width of 768 pixels */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    body {
+        font-size: 14px;
+    }
+ }
+
+/* Styles for devices with a maximum width of 480 pixels */
+@media (max-width: 480px) {
+    /* Adjust styles for even smaller screens */
+    body {
+        font-size: 12px;
+    }  
 }

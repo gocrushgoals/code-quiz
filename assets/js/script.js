@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (userAnswer === questions[currentQuestionIndex].answer) {
             score++;
         } else {
-            timeLeft -= 10; // Subtract time for incorrect answer
+            timeLeft -= 5; // Subtract time for incorrect answer
             if (timeLeft < 0) timeLeft = 0; // Ensure time doesn't go negative
         }
 
@@ -195,7 +195,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const initials = initialsInput.value.trim();
         // Implement saving score and initials logic here
         localStorage.setItem('score', score);
-        localStorage.setItem('initials', initials);
-        // You may want to redirect the user or show some confirmation message
+        localStorage.setItem('initials', initials);       
     }
 });
