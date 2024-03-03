@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentQuestionIndex = 0;
     let score = 0;
-    let timeLeft = 60; // Initial time for the quiz
+    let timeLeft = 90; // Initial time for the quiz
 
     // Quiz questions with multiple choice options
     const questions = [
@@ -38,6 +38,86 @@ document.addEventListener('DOMContentLoaded', function() {
                 D: "<line>"
             },
             answer: "A"
+        },
+        {
+            question: "Which of the following is used to style HTML elements?",
+            options: {
+                A: "HTML",
+                B: "JavaScript",
+                C: "CSS",
+                D: "XML"
+            },
+            answer: "C"
+        },
+        {
+            question: "Which of the following is NOT a valid data type in JavaScript?",
+            options: {
+                A: "<String>",
+                B: "<Character>",
+                C: "<Boolean>",
+                D: "<Float>"
+            },
+            answer: "B"
+        },
+        {
+            question: "Which CSS property is used to set the text color of an element?",
+            options: {
+                A: "font-color",
+                B: "color",
+                C: "text-color",
+                D: "text"
+            },
+            answer: "B"
+        },
+        {
+            question: "Which tag is used to embed an image in HTML?",
+            options: {
+                A: "<img>",
+                B: "<image>",
+                C: "<picture>",
+                D: "<src>"
+            },
+            answer: "A"
+        },
+        {
+            question: "What is the correct way to write a comment in JavaScript?",
+            options: {
+                A: "// This is a comment",
+                B: "<!-- This is a comment -->",
+                C: "/* This is a comment */",
+                D: "# This is a comment"
+            },
+            answer: "C"
+        },
+        {
+            question: "Which HTML tag is used to define an unordered list?",
+            options: {
+                A: "<ol>",
+                B: "<list>",
+                C: "<ul>",
+                D: "<unordered>"
+            },
+            answer: "C"
+        },
+        {
+            question: "What is the correct HTML tag for creating a hyperlink?",
+            options: {
+                A: "<a>",
+                B: "<link>",
+                C: "<hyperlink>",
+                D: "<href>"
+            },
+            answer: "A"
+        },
+        {
+            question: "Which HTML tag is used to define the main content of a web page?",
+            options: {
+                A: "<header>",
+                B: "<body>",
+                C: "<main>",
+                D: "<section>"
+            },
+            answer: "C"
         },
         // Add more questions as needed
     ];
