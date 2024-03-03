@@ -16,8 +16,8 @@ body {
     margin-top: 50px;
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom: 20px;
-    background-color: #ceacfc;
+    margin-bottom: 10px;
+    background-color: #9c92d0;
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -29,7 +29,10 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #eeecf3;
+    background-color: rgb(55, 48, 83);
+    padding: 20px;
+    border-radius: 5px;
 }
 
 button {
