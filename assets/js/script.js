@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const quizContainer = document.getElementById('quiz-container');
     const resultContainer = document.getElementById('result');
     const questionElement = document.getElementById('question');
-    const answerInput = document.getElementById('answer');
+    const optionAElement = document.getElementById('optionA');
+    const optionBElement = document.getElementById('optionB');
+    const optionCElement = document.getElementById('optionC');
+    const optionDElement = document.getElementById('optionD');
     const submitButton = document.getElementById('submit-btn');
     const scoreElement = document.getElementById('score');
     const initialsInput = document.getElementById('initials');
@@ -14,15 +17,27 @@ document.addEventListener('DOMContentLoaded', function() {
     let score = 0;
     let timeLeft = 60; // Initial time for the quiz
 
-    // Quiz questions
+    // Quiz questions with multiple choice options
     const questions = [
         {
-            question: "What is 2 + 2?",
-            answer: "4"
+            question: "What does HTML stand for?",
+            options: {
+                A: "Hyper Text Markup Language",
+                B: "High Tech Markup Language",
+                C: "Hyperlinks and Text Markup Language",
+                D: "Home Tool Markup Language"
+            },
+            answer: "A"
         },
         {
-            question: "Who wrote Hamlet?",
-            answer: "Shakespeare"
+            question: "What is the correct HTML element for inserting a line break?",
+            options: {
+                A: "<br>",
+                B: "<lb>",
+                C: "<break>",
+                D: "<line>"
+            },
+            answer: "A"
         },
         // Add more questions as needed
     ];
@@ -39,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function showQuestion() {
         const currentQuestion = questions[currentQuestionIndex];
         questionElement.innerText = currentQuestion.question;
+        optionAElement.innerText = currentQuestion.options.A;
+        optionBElement.innerText = currentQuestion.options.B;
+        optionCElement.innerText = currentQuestion.options.C;
+        optionDElement.innerText = currentQuestion.options.D;
     }
 
     function startTimer() {
@@ -56,10 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
     submitButton.addEventListener('click', checkAnswer);
 
     function checkAnswer() {
-        const userAnswer = answerInput.value.trim().toLowerCase();
-        const correctAnswer = questions[currentQuestionIndex].answer.toLowerCase();
+        const selectedOption = document.querySelector('input[name="option"]:checked');
+        if (!selectedOption) return; // No option selected
 
-        if (userAnswer === correctAnswer) {
+        const userAnswer = selectedOption.value;
+
+        if (userAnswer === questions[currentQuestionIndex].answer) {
             score++;
         } else {
             timeLeft -= 10; // Subtract time for incorrect answer
@@ -73,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             endQuiz();
         }
 
-        answerInput.value = ''; // Clear input field
+        selectedOption.checked = false; // Uncheck the selected option
     }
 
     function endQuiz() {
@@ -85,9 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
     submitScoreButton.addEventListener('click', saveScore);
 
     function saveScore() {
-        // Implement saving score and initials logic here
         const initials = initialsInput.value.trim();
-        // Example: Save score to localStorage
+        // Implement saving score and initials logic here
         localStorage.setItem('score', score);
         localStorage.setItem('initials', initials);
         // You may want to redirect the user or show some confirmation message

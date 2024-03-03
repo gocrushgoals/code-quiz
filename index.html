@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Coding Quiz</h1>
+        <h1>Code Quiz</h1>
         <button id="start-btn">Start Quiz</button>
         <div id="quiz-container" class="hide">
             <p id="question"></p>
-            <input type="text" id="answer">
+            <div id="options">
+                <label><input type="radio" name="option" value="A"> <span id="optionA"></span></label><br>
+                <label><input type="radio" name="option" value="B"> <span id="optionB"></span></label><br>
+                <label><input type="radio" name="option" value="C"> <span id="optionC"></span></label><br>
+                <label><input type="radio" name="option" value="D"> <span id="optionD"></span></label><br>
+            </div>
             <button id="submit-btn">Submit Answer</button>
         </div>
         <div id="result" class="hide">
